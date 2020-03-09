@@ -1,0 +1,14 @@
+//
+//  PrefixHeader.pch
+//  YJUIKitDemo
+//
+//  Created by EStrongerE023 on 2020/3/6.
+//  Copyright © 2020 EStrongerE023. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import "YJFoundation.h"
+
+#endif /* PrefixHeader_pch */
