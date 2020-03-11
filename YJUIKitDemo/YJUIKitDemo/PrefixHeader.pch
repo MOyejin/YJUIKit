@@ -10,6 +10,5 @@
 #define PrefixHeader_pch
 
 #import "YJFoundation.h"
-#import "MJRefresh.h"
 
 #endif /* PrefixHeader_pch */

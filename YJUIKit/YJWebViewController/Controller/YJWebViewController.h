@@ -24,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param UIDelegate WKUIDelegate
  @param navigationDelegate WKNavigationDelegate
  */
-- (void)yj__setWebViewUIDelegate:(_Nullable id <WKUIDelegate>)UIDelegate
+- (void)yj_setWebViewUIDelegate:(_Nullable id <WKUIDelegate>)UIDelegate
              navigationDelegate:(_Nullable id <WKNavigationDelegate>)navigationDelegate;
 
 

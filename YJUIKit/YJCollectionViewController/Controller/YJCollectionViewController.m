@@ -7,6 +7,7 @@
 //
 
 #import "YJCollectionViewController.h"
+#import "MJRefresh/MJRefresh.h"//依赖的第三方库
 
 @interface YJCollectionViewController ()
 
