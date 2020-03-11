@@ -10,23 +10,41 @@
 
 @interface YJScrollViewController ()
 
+@property (nonatomic, strong, readwrite) UIScrollView *yj_scrollView;
+
+
 @end
 
 @implementation YJScrollViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [self.view addSubview:self.yj_scrollView];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)yj_setScrollViewDelegate:(id<UIScrollViewDelegate>)delegate {
+    
+    self.yj_scrollView.delegate = delegate;
 }
-*/
+
+- (void)yj_hiddenScrollIndicator {
+    
+    self.yj_scrollView.showsVerticalScrollIndicator   = NO;
+    self.yj_scrollView.showsHorizontalScrollIndicator = NO;
+}
+
+- (UIScrollView *)yj_scrollView {
+    
+    if (!_yj_scrollView) {
+        
+        _yj_scrollView = [[UIScrollView alloc] initWithFrame:self.view.frame];
+        
+        _yj_scrollView.backgroundColor = [UIColor whiteColor];
+    }
+    
+    return _yj_scrollView;
+}
+
 
 @end

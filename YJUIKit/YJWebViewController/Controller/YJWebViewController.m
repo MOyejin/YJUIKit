@@ -10,23 +10,33 @@
 
 @interface YJWebViewController ()
 
+@property (nonatomic, strong, readwrite) WKWebView *yj_webView;
+
 @end
 
 @implementation YJWebViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [self.view addSubview:self.yj_webView];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)yj_setWebViewUIDelegate:(id<WKUIDelegate>)UIDelegate
+             navigationDelegate:(id<WKNavigationDelegate>)navigationDelegate {
+    
+    self.yj_webView.UIDelegate         = UIDelegate;
+    self.yj_webView.navigationDelegate = navigationDelegate;
 }
-*/
+
+- (WKWebView *)yj_webView {
+    
+    if (!_yj_webView) {
+        
+        _yj_webView = [[WKWebView alloc] initWithFrame:self.view.bounds];
+    }
+    
+    return _yj_webView;
+}
 
 @end
