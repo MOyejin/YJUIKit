@@ -25,7 +25,7 @@ static NSString *const kHideActivityIndicatorKey = @"kHideActivityIndicatorKey";
 @implementation UIButton (YJButton)
 
 #pragma mark - 修改点击区域
-- (void)setyj_YJickAreaEdgeInsets:(UIEdgeInsets)yj_YJickAreaEdgeInsets {
+- (void)setYj_YJickAreaEdgeInsets:(UIEdgeInsets)yj_YJickAreaEdgeInsets {
     
     NSValue *value = [NSValue valueWithUIEdgeInsets:yj_YJickAreaEdgeInsets];
     
@@ -62,7 +62,7 @@ static NSString *const kHideActivityIndicatorKey = @"kHideActivityIndicatorKey";
 }
 
 #pragma mark - 是否正在提交
-- (void)setyj_isSubmitting:(BOOL)yj_isSubmitting {
+- (void)setYj_isSubmitting:(BOOL)yj_isSubmitting {
     
     objc_setAssociatedObject(self, YJButtonSubmitKey, @(yj_isSubmitting), OBJC_ASSOCIATION_ASSIGN);
 }

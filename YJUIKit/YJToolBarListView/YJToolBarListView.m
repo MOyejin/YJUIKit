@@ -49,27 +49,27 @@
 }
 
 #pragma mark - 设置ToolBar显示的样式
-- (void)setyj_toolBarStyle:(YJToolBarStyle)yj_toolBarStyle {
+- (void)setYj_toolBarStyle:(YJToolBarStyle)yj_toolBarStyle {
     _yj_toolBarStyle = yj_toolBarStyle;
 }
 
 #pragma mark - 设置未选中的按钮颜色
-- (void)setyj_deselectColor:(UIColor *)yj_deselectColor {
+- (void)setYj_deselectColor:(UIColor *)yj_deselectColor {
     _yj_deselectColor = yj_deselectColor;
 }
 
 #pragma mark - 设置选中的按钮颜色
-- (void)setyj_SelectedColor:(UIColor *)yj_selectedColor {
+- (void)setYj_SelectedColor:(UIColor *)yj_selectedColor {
     _yj_selectedColor = yj_selectedColor;
 }
 
 #pragma mark - 设置ToolBar的背景颜色
-- (void)setyj_barBakcgroundColor:(UIColor *)yj_barBakcgroundColor {
+- (void)setYj_barBakcgroundColor:(UIColor *)yj_barBakcgroundColor {
     self.backgroundColor = yj_barBakcgroundColor;
 }
 
 #pragma mark - 设置底部线条的颜色
-- (void)setyj_bottomLineColor:(UIColor *)yj_bottomLineColor {
+- (void)setYj_bottomLineColor:(UIColor *)yj_bottomLineColor {
     
     _yj_bottomLineColor = yj_bottomLineColor;
     
@@ -77,7 +77,7 @@
 }
 
 #pragma mark - 设置选中提示条的颜色
-- (void)setyj_selectedLineColor:(UIColor *)yj_selectedLineColor {
+- (void)setYj_selectedLineColor:(UIColor *)yj_selectedLineColor {
     
     _yj_selectedLineColor = yj_selectedLineColor;
     
@@ -85,27 +85,27 @@
 }
 
 #pragma mark - 设置按钮文字大小
-- (void)setyj_textFont:(NSInteger)yj_textFont {
+- (void)setYj_textFont:(NSInteger)yj_textFont {
     _yj_textFont = yj_textFont;
 }
 
 #pragma mark - 设置标题文字是否自动缩小
-- (void)setyj_titleAdjustsFontSizeToFitWidth:(BOOL)yj_titleAdjustsFontSizeToFitWidth {
+- (void)setYj_titleAdjustsFontSizeToFitWidth:(BOOL)yj_titleAdjustsFontSizeToFitWidth {
     _yj_titleAdjustsFontSizeToFitWidth = yj_titleAdjustsFontSizeToFitWidth;
 }
 
 #pragma mark - 设置按钮之间的间距
-- (void)setyj_ButtonSpacing:(CGFloat)yj_buttonSpacing {
+- (void)setYj_ButtonSpacing:(CGFloat)yj_buttonSpacing {
     _yj_buttonSpacing = yj_buttonSpacing;
 }
 
 #pragma mark - 是否需要底部线
-- (void)setyj_isNeedLine:(BOOL)yj_isNeedLine {
+- (void)setYj_isNeedLine:(BOOL)yj_isNeedLine {
     _yj_isNeedLine = yj_isNeedLine;
 }
 
 #pragma mark - 是否需要选中提示线
-- (void)setyj_isNeedSelectedLine:(BOOL)yj_isNeedSelectedLine {
+- (void)setYj_isNeedSelectedLine:(BOOL)yj_isNeedSelectedLine {
     _yj_isNeedSelectedLine = yj_isNeedSelectedLine;
 }
 
@@ -317,12 +317,12 @@
 
 #pragma mark -  CALToolBarSeparationStyle
 #pragma mark - 设置Separation Color
-- (void)setyj_separationColor:(UIColor *)yj_separationColor {
+- (void)setYj_separationColor:(UIColor *)yj_separationColor {
     _yj_separationColor = yj_separationColor;
 }
 
 #pragma mark - 设置Separation Width
-- (void)setyj_SeparationWidth:(CGFloat)yj_separationWidth {
+- (void)setYj_SeparationWidth:(CGFloat)yj_separationWidth {
     _yj_separationWidth = yj_separationWidth;
 }
 

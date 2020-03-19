@@ -7,7 +7,8 @@
 //
 
 #import "AppDelegate.h"
-
+#import "YJUIKit.h"
+#import "ViewController.h"
 
 @interface AppDelegate ()
 
@@ -15,9 +16,67 @@
 
 @implementation AppDelegate
 
+- (UIWindow *)window {
+    
+    YJ_GET_METHOD_RETURN_OBJC(_window);
+    
+    _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    
+    _window.backgroundColor = [UIColor whiteColor];
+    
+    return _window;
+}
+
+- (UIImage *)imageWithColor:(UIColor *)color{
+    CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextFillRect(context, rect);
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext(); return image;
+}
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    YJNavigationController *es_navigationController               = [[YJNavigationController alloc]
+                                                                     initWithRootViewController:[ViewController new]];
+    
+    es_navigationController.yj_shadowImage                        = [UIImage new];
+    es_navigationController.yj_tintColor                          = [UIColor blackColor];
+    es_navigationController.yj_foregroundColor                    = [UIColor blackColor];
+    es_navigationController.yj_backgroundImage                    = [self imageWithColor:[UIColor blackColor]];
+    
+    //        es_navigationController.navigationBar.barTintColor = ESBlackColor;
+    
+    [UIApplication sharedApplication].statusBarStyle              = UIStatusBarStyleLightContent;
+    
+    [UINavigationBar appearance].translucent                      = NO;
+    [UINavigationBar appearance].backIndicatorImage               = [[UIImage imageNamed:@"Nav_back"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    [UINavigationBar appearance].backIndicatorTransitionMaskImage = [[UIImage imageNamed:@"Nav_back"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+    
+    [[UIBarButtonItem appearance] setTintColor:[UIColor blackColor]];
+    [[UIBarButtonItem appearance] setTitleTextAttributes:@{NSFontAttributeName : [UIFont yj_fitSystemFontOfSize:35]}
+                                                forState:UIControlStateNormal];
+    [[UIBarButtonItem appearance] setTitleTextAttributes:@{NSFontAttributeName : [UIFont yj_fitSystemFontOfSize:35]}
+                                                forState:UIControlStateHighlighted];
+    
+    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],
+                                                       NSForegroundColorAttributeName, nil]
+                                             forState:UIControlStateNormal];
+    [[UITabBarItem appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
+                                                        [UIColor blackColor],
+                                                        NSForegroundColorAttributeName, nil]
+                                             forState:UIControlStateSelected];
+    
+
+    self.window.rootViewController          = es_navigationController;
+    
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 

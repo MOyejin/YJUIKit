@@ -45,7 +45,7 @@ static const void *YJBarButtonItemActionKey = &YJBarButtonItemActionKey;
 
 @implementation UIBarButtonItem (YJBarButtonItem)
 
-- (void)setyj_barButtonItemAction:(YJBarButtonItemAction)yj_barButtonItemAction {
+- (void)setYj_barButtonItemAction:(YJBarButtonItemAction)yj_barButtonItemAction {
     
     YJBarButtonItemActionBlock *yj_barButtonItemActionBlock = [[YJBarButtonItemActionBlock alloc] initBarButtonItemWithActionBlock:yj_barButtonItemAction];
     

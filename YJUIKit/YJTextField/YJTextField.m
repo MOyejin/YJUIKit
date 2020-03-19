@@ -29,7 +29,7 @@
     }
 }
 
-- (void)setyj_lineColor:(UIColor *)yj_lineColor {
+- (void)setYj_lineColor:(UIColor *)yj_lineColor {
     
     self.yj_lineImageView.backgroundColor = yj_lineColor;
 }

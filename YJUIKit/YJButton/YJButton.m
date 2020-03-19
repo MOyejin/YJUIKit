@@ -138,14 +138,14 @@
     [self setNeedsLayout];
 }
 
-- (void)setyj_imageSize:(CGSize)yj_imageSize {
+- (void)setYj_imageSize:(CGSize)yj_imageSize {
     
     _yj_imageSize = yj_imageSize;
     
     [self setNeedsLayout];
 }
 
-- (void)setyj_imageSpacing:(CGFloat)yj_imageSpacing {
+- (void)setYj_imageSpacing:(CGFloat)yj_imageSpacing {
     
     _yj_imageSpacing = yj_imageSpacing;
     

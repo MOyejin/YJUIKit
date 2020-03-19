@@ -26,7 +26,7 @@
                      animated:animated];
 }
 
-- (void)setyj_backgroundImage:(UIImage *)yj_backgroundImage {
+- (void)setYj_backgroundImage:(UIImage *)yj_backgroundImage {
     
     _yj_backgroundImage = yj_backgroundImage;
     
@@ -34,14 +34,14 @@
                              forBarMetrics:UIBarMetricsDefault];
 }
 
-- (void)setyj_tintColor:(UIColor *)yj_tintColor {
+- (void)setYj_tintColor:(UIColor *)yj_tintColor {
     
     _yj_tintColor = yj_tintColor;
     
     [self.navigationBar setTintColor:yj_tintColor];
 }
 
-- (void)setyj_foregroundColor:(UIColor *)yj_foregroundColor {
+- (void)setYj_foregroundColor:(UIColor *)yj_foregroundColor {
     
     _yj_foregroundColor = yj_foregroundColor;
     
@@ -50,7 +50,7 @@
     [self.navigationBar setTitleTextAttributes:yj_dictionary];
 }
 
-- (void)setyj_shadowImage:(UIImage *)yj_shadowImage {
+- (void)setYj_shadowImage:(UIImage *)yj_shadowImage {
     
     _yj_shadowImage = yj_shadowImage;
     
