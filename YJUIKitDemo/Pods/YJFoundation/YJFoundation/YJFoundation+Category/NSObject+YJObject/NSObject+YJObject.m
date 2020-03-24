@@ -1,9 +1,9 @@
 //
 //  NSObject+YJObject.m
-//  YJFoundationDemo
+//  YJFoundationExample
 //
-//  Created by Moyejin168 on 2020/1/15.
-//  Copyright © 2020 Moyejin. All rights reserved.
+//  Created by Moyejin168 on 2018/2/21.
+//  Copyright © 2018年 Moyejin168. All rights reserved.
 //
 
 #import "NSObject+YJObject.h"
@@ -79,23 +79,23 @@ static const int YJObjectKVOBlockCategoryKey;
 
 @end
 
-@implementation NSObject (CLObject)
+@implementation NSObject (YJObject)
 
 #pragma mark - Runtime
-+ (void)yj_exchangeImplementationsWithClass:(Class)class
++ (void)yj_exchangeImplementationsWithClass:(Class)Class
                            originalSelector:(SEL)originalSelector
                            swizzledSelector:(SEL)swizzledSelector {
     
-    Method yj_originalMethod = class_getInstanceMethod(class, originalSelector);
-    Method yj_swizzledSelector = class_getInstanceMethod(class, swizzledSelector);
+    Method yj_originalMethod = class_getInstanceMethod(Class, originalSelector);
+    Method yj_swizzledSelector = class_getInstanceMethod(Class, swizzledSelector);
     
-    BOOL yj_didAddMethod = [self yj_addMethodWithClass:class
+    BOOL yj_didAddMethod = [self yj_addMethodWithClass:Class
                                       originalSelector:originalSelector
                                       swizzledSelector:swizzledSelector];
     
     if (yj_didAddMethod) {
-        
-        class_replaceMethod(class,
+
+        class_replaceMethod(Class,
                             swizzledSelector,
                             method_getImplementation(yj_originalMethod),
                             method_getTypeEncoding(yj_originalMethod));
@@ -105,28 +105,28 @@ static const int YJObjectKVOBlockCategoryKey;
     }
 }
 
-+ (BOOL)yj_addMethodWithClass:(Class)class
++ (BOOL)yj_addMethodWithClass:(Class)Class
              originalSelector:(SEL)originalSelector
              swizzledSelector:(SEL)swizzledSelector {
     
-    Method yj_swizzledSelector = class_getInstanceMethod(class, swizzledSelector);
-    
-    BOOL yj_didAddMethod = class_addMethod(class,
+    Method yj_swizzledSelector = class_getInstanceMethod(Class, swizzledSelector);
+
+    BOOL yj_didAddMethod = class_addMethod(Class,
                                            originalSelector,
-                                           class_getMethodImplementation(class, swizzledSelector),
+                                           class_getMethodImplementation(Class, swizzledSelector),
                                            method_getTypeEncoding(yj_swizzledSelector));
-    
+
     
     return yj_didAddMethod;
 }
 
-+ (void)yj_replaceMethodWithClass:(Class)class
++ (void)yj_replaceMethodWithClass:(Class)Class
                  originalSelector:(SEL)originalSelector
                  swizzledSelector:(SEL)swizzledSelector {
     
-    Method yj_originalMethod = class_getInstanceMethod(class, originalSelector);
-    
-    class_replaceMethod(class,
+    Method yj_originalMethod = class_getInstanceMethod(Class, originalSelector);
+
+    class_replaceMethod(Class,
                         swizzledSelector,
                         method_getImplementation(yj_originalMethod),
                         method_getTypeEncoding(yj_originalMethod));
@@ -178,24 +178,24 @@ static const int YJObjectKVOBlockCategoryKey;
     }
     
     free(yj_methodList);
-    
+
     return yj_selectorArray;
 }
 
-+ (NSArray <NSString *> *)yj_getPropertyListWithClass:(Class)class {
++ (NSArray <NSString *> *)yj_getPropertyListWithClass:(Class)Class {
     
     unsigned int yj_propertyCount;
     
-    objc_property_t *yj_propertyList = class_copyPropertyList(class, &yj_propertyCount);
+    objc_property_t *yj_propertyList = class_copyPropertyList(Class, &yj_propertyCount);
     
     NSMutableArray *yj_propertyArray = [NSMutableArray array];
     
     for (int i = 0; i < yj_propertyCount; i++) {
-        
+
         objc_property_t yj_property = yj_propertyList[i];
         
         const char *yj_constCharProperty = property_getName(yj_property);
-        
+
         NSString *yj_propertyName = [NSString stringWithCString:yj_constCharProperty
                                                        encoding:NSUTF8StringEncoding];
         
@@ -203,15 +203,15 @@ static const int YJObjectKVOBlockCategoryKey;
     }
     
     free(yj_propertyList);
-    
+
     return yj_propertyArray;
 }
 
-+ (NSArray <NSString *> *)yj_getIVarListWithClass:(Class)class {
++ (NSArray <NSString *> *)yj_getIVarListWithClass:(Class)Class {
     
     unsigned int yj_ivarCount;
     
-    Ivar *yj_ivarList = class_copyIvarList(class, &yj_ivarCount);
+    Ivar *yj_ivarList = class_copyIvarList(Class, &yj_ivarCount);
     
     NSMutableArray *yj_ivarArray = [NSMutableArray array];
     
@@ -228,17 +228,17 @@ static const int YJObjectKVOBlockCategoryKey;
     }
     
     free(yj_ivarList);
-    
+
     return yj_ivarArray;
 }
 
-+ (NSArray <NSString *> *)yj_getProtocolListWithClass:(Class)class {
++ (NSArray <NSString *> *)yj_getProtocolListWithClass:(Class)Class {
     
     unsigned int yj_protocolCount;
     
     NSMutableArray *yj_protocolArray = [NSMutableArray array];
     
-    __unsafe_unretained Protocol **yj_protocolList = class_copyProtocolList(class, &yj_protocolCount);
+    __unsafe_unretained Protocol **yj_protocolList = class_copyProtocolList(Class, &yj_protocolCount);
     
     for (int i = 0; i < yj_protocolCount; i++) {
         
@@ -247,8 +247,8 @@ static const int YJObjectKVOBlockCategoryKey;
         const char *yj_constCharProtocolName = protocol_getName(yj_protocal);
         
         NSString *yj_protocolName = [NSString stringWithCString:yj_constCharProtocolName
-                                                       encoding:NSUTF8StringEncoding];
-        
+                                                   encoding:NSUTF8StringEncoding];
+
         [yj_protocolArray addObject:yj_protocolName];
     }
     
@@ -273,7 +273,7 @@ static const int YJObjectKVOBlockCategoryKey;
 
 #pragma mark - GCD
 - (void)yj_performAsyncWithComplete:(YJObject)complete {
-    
+
     dispatch_queue_t yj_globalQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     dispatch_async(yj_globalQueue, complete);
 }
@@ -292,7 +292,7 @@ static const int YJObjectKVOBlockCategoryKey;
 
 - (void)yj_performWithAfterSecond:(NSTimeInterval)afterSecond
                          complete:(YJObject)complete {
-    
+
     dispatch_time_t yj_time = dispatch_time(DISPATCH_TIME_NOW, afterSecond * NSEC_PER_SEC);
     
     dispatch_after(yj_time, dispatch_get_main_queue(), complete);
@@ -348,7 +348,7 @@ static const int YJObjectKVOBlockCategoryKey;
 - (void)yj_removeAllObserver {
     
     NSMutableDictionary *yj_mutableDictionary = [self yj_allObjectObserverBlocks];
-    
+
     [yj_mutableDictionary enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSArray *obj, BOOL * _Nonnull stop) {
         
         [obj enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -375,5 +375,5 @@ static const int YJObjectKVOBlockCategoryKey;
     return yj_mutableDictionary;
 }
 
-
 @end
+

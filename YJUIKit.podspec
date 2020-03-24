@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
 spec.name         = "YJUIKit"
-spec.version      = "0.0.9"
+spec.version      = "0.0.10"
 spec.summary      = "YJUIKit for iOS"
 spec.homepage     = "https://github.com/MOyejin/YJUIKit"
 spec.license      = { :type => "MIT", :file => "LICENSE" }

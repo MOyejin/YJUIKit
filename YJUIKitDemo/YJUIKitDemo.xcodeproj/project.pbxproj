@@ -49,7 +49,6 @@
 		6CD18BE82418FF7400F7859A /* YJPickerToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD18B742418FF7300F7859A /* YJPickerToolView.m */; };
 		6CD18BE92418FF7400F7859A /* YJScanQRCodeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD18B782418FF7300F7859A /* YJScanQRCodeController.m */; };
 		6CD18BEA2418FF7400F7859A /* YJScanQRCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD18B7B2418FF7300F7859A /* YJScanQRCodeView.m */; };
-		6CD18BEB2418FF7400F7859A /* NSObject+YJObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD18B802418FF7300F7859A /* NSObject+YJObject.m */; };
 		6CD18BEC2418FF7400F7859A /* UIFont+YJFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD18B832418FF7300F7859A /* UIFont+YJFont.m */; };
 		6CD18BED2418FF7400F7859A /* UIScrollView+YJScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD18B862418FF7300F7859A /* UIScrollView+YJScrollView.m */; };
 		6CD18BEE2418FF7400F7859A /* UIBarButtonItem+YJBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD18B882418FF7300F7859A /* UIBarButtonItem+YJBarButtonItem.m */; };
@@ -159,8 +158,6 @@
 		6CD18B792418FF7300F7859A /* YJScanQRCodeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJScanQRCodeController.h; sourceTree = "<group>"; };
 		6CD18B7B2418FF7300F7859A /* YJScanQRCodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJScanQRCodeView.m; sourceTree = "<group>"; };
 		6CD18B7C2418FF7300F7859A /* YJScanQRCodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJScanQRCodeView.h; sourceTree = "<group>"; };
-		6CD18B7F2418FF7300F7859A /* NSObject+YJObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+YJObject.h"; sourceTree = "<group>"; };
-		6CD18B802418FF7300F7859A /* NSObject+YJObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+YJObject.m"; sourceTree = "<group>"; };
 		6CD18B822418FF7300F7859A /* UIFont+YJFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+YJFont.h"; sourceTree = "<group>"; };
 		6CD18B832418FF7300F7859A /* UIFont+YJFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+YJFont.m"; sourceTree = "<group>"; };
 		6CD18B852418FF7300F7859A /* UIScrollView+YJScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+YJScrollView.h"; sourceTree = "<group>"; };
@@ -727,7 +724,6 @@
 		6CD18B7D2418FF7300F7859A /* YJUIKit+Category */ = {
 			isa = PBXGroup;
 			children = (
-				6CD18B7E2418FF7300F7859A /* NSObject+YJObject */,
 				6CD18B812418FF7300F7859A /* UIFont+YJFont */,
 				6CD18B842418FF7300F7859A /* UIScrollView+YJScrollView */,
 				6CD18B872418FF7300F7859A /* UIBarButtonItem+YJBarButtonItem */,
@@ -750,15 +746,6 @@
 				6CD18BBA2418FF7300F7859A /* UIColor+YJColor */,
 			);
 			path = "YJUIKit+Category";
-			sourceTree = "<group>";
-		};
-		6CD18B7E2418FF7300F7859A /* NSObject+YJObject */ = {
-			isa = PBXGroup;
-			children = (
-				6CD18B7F2418FF7300F7859A /* NSObject+YJObject.h */,
-				6CD18B802418FF7300F7859A /* NSObject+YJObject.m */,
-			);
-			path = "NSObject+YJObject";
 			sourceTree = "<group>";
 		};
 		6CD18B812418FF7300F7859A /* UIFont+YJFont */ = {
@@ -1139,7 +1126,6 @@
 				6CD18BF52418FF7400F7859A /* UIDevice+YJDevice.m in Sources */,
 				6CD18BF02418FF7400F7859A /* UIButton+YJButton.m in Sources */,
 				6CD18BFF2418FF7400F7859A /* UIColor+YJColor.m in Sources */,
-				6CD18BEB2418FF7400F7859A /* NSObject+YJObject.m in Sources */,
 				6CD18BD52418FF7400F7859A /* YJWebViewViewModel.m in Sources */,
 				6CD18BCF2418FF7300F7859A /* YJCollectionViewDragDelegate.m in Sources */,
 				6CD18BF62418FF7400F7859A /* UINavigationItem+YJNavigationItem.m in Sources */,

@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  只读的WKWebView
  */
-@property (nonatomic, strong, readonly) WKWebView *yj__webView;
+@property (nonatomic, strong, readonly) WKWebView *yj_webView;
 
 /**
  设置WKWebView的WKUIDelegate于WKNavigationDelegate

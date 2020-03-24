@@ -23,6 +23,7 @@
 #import "NSMutableDictionary+YJMutableDictionary.h"
 #import "NSNotificationCenter+YJNotificationCenter.h"
 #import "NSNumber+YJNumber.h"
+#import "NSObject+YJObject.h"
 #import "NSString+YJString.h"
 #import "NSTimer+YJTimer.h"
 #import "NSURL+YJURL.h"
