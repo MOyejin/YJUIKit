@@ -49,7 +49,6 @@
     es_navigationController.yj_foregroundColor                    = [UIColor blackColor];
     es_navigationController.yj_backgroundImage                    = [self imageWithColor:[UIColor blackColor]];
     
-    //        es_navigationController.navigationBar.barTintColor = ESBlackColor;
     
     [UIApplication sharedApplication].statusBarStyle              = UIStatusBarStyleLightContent;
     
